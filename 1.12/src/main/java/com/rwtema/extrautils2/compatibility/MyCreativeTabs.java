@@ -69,7 +69,7 @@ public class MyCreativeTabs extends CreativeTabs implements Comparator<ItemStack
 	public int compare(ItemStack o1, ItemStack o2) {
 		int i = -Boolean.compare(isBlock(o1), isBlock(o2));
 		if (i != 0) return i;
-		i = ((new ItemStack(o1.getItem())).getDisplayName()).compareTo((new ItemStack(o2.getItem())).getDisplayName());
+                i = String.valueOf(new ItemStack(o1.getItem()).getDisplayName()).compareTo(String.valueOf(new ItemStack(o2.getItem()).getDisplayName()));
 		if (i != 0) return i;
 
 		return o1.getDisplayName().compareTo(o2.getDisplayName());
